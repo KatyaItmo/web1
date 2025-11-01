@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Лабораторная работа №1</title>
+		<link rel="stylesheet" type="text/css" href="styles.css"/>
+	</head>
+	
+	<body>
+		<div id="page-container">
+		
+			<!-- Шапка страницы -->
+			<header id="header">
+				<div class="meme-container">
+					<div id="meme-column1">
+						<img src="shlepa.png" alt="Мем_1" class="meme">
+					</div>
+					<div id="header-content">
+						<h1>Лабораторная работа №1</h1>
+						<div class="student-info">
+							<div class="info-item">ФИО: Чистякова Екатерина Александровна</div>
+							<div class="info-item">Группа: P3218</div>
+							<div class="info-item">Вариант: 468018</div>
+						</div>
+					</div>
+					<div id="meme-column2">
+						<img src="shlepa.png" alt="Мем_1" class="meme">
+					</div>
+				</div>
+			</header>
+			
+			<main id="main-content">
+			
+				<!-- Левая колонка - форма ввода -->
+				<section id="input-section" class="content-block">
+					<h2>Ввод параметров</h2>
+					
+					<!-- Координата X -->
+					<form id="point-form" class="input-form">
+						<div class="form-row">
+							<label for="x-coord" class="input-label">Координата X:</label>
+							<div class="input-description">Диапазон: от -3 до 5</div>
+							<input type="text" id="x-coord" name="x" class="text-input"
+								placeholder="Введите число от -3 до 5" required>
+							<div class="validation-message" id="x-validation"></div>
+						</div>
+						
+						<!-- Координата Y -->
+						<div class="form-row">
+							<label class="input-label">Координата Y:</label>
+							<div class="input-description">Выберите одно значение</div>
+							<div class="checkbox-group" id="y-checkbox-group">
+								<div class="checkbox-row">
+									<input type="checkbox" id="y-2" name="y" value="-2" class="checkbox-input">
+									<label for="y-2" class="checkbox-label">-2</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y-1.5" name="y" value="-1.5" class="checkbox-input">
+									<label for="y-1.5" class="checkbox-label">-1.5</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y-1" name="y" value="-1" class="checkbox-input">
+									<label for="y-1" class="checkbox-label">-1</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y-0.5" name="y" value="-0.5" class="checkbox-input">
+									<label for="y-0.5" class="checkbox-label">-0.5</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y0" name="y" value="0" class="checkbox-input">
+									<label for="y0" class="checkbox-label">0</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y0.5" name="y" value="0.5" class="checkbox-input">
+									<label for="y0.5" class="checkbox-label">0.5</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y1" name="y" value="1" class="checkbox-input">
+									<label for="y1" class="checkbox-label">1</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y1.5" name="y" value="1.5" class="checkbox-input">
+									<label for="y1.5" class="checkbox-label">1.5</label>
+								</div>
+								<div class="checkbox-row">
+									<input type="checkbox" id="y2" name="y" value="2" class="checkbox-input">
+									<label for="y2" class="checkbox-label">2</label>
+								</div>
+							</div>
+							<div class="validation-message" id="y-validation"></div>
+						</div>
+						
+						<!-- Радиус R -->
+						<div class="form-row">
+							<label class="input-label">Радиус R:</label>
+							<div class="input-description">Выберите значение радиуса</div>
+							<div class="button-group" id="r-button-group">
+								<button type="button" class="radius-btn" data-value="1">1</button>
+								<button type="button" class="radius-btn" data-value="1.5">1.5</button>
+								<button type="button" class="radius-btn" data-value="2">2</button>
+								<button type="button" class="radius-btn" data-value="2.5">2.5</button>
+								<button type="button" class="radius-btn" data-value="3">3</button>
+							</div>
+							<input type="hidden" id="r-value" name="r" value="">
+							<div class="validation-message" id="r-validation"></div>
+						</div>
+						
+						<!-- Кнопка отправки -->
+						<div class="form-row">
+							<button type="submit" id="submit-btn" class="submit-button">Проверить точку</button>
+						</div>
+					</form>
+				</section>
+				
+				<!-- Правая колонка - график и таблица -->
+				<section id="result-section" class="content-block">
+					
+					<!-- График -->
+					<div id="graph-section">
+						<h2>Область попадания</h2>
+						<canvas id="coordinate-plane" width="700" height="500">
+							<!-- Здесь будет график -->
+						</canvas>
+					</div>
+					
+					<!-- Результаты -->
+					<div id="results-section">
+						<h2>История проверок</h2>
+						<div id="table-container">
+							<table id="result-table">
+								<thead>
+									<tr>
+										<th>X</th>
+										<th>Y</th>
+										<th>R</th>
+										<th>Результат</th>
+										<th>Время запроса</th>
+										<th>Время работы</th>
+									</tr>
+								</thead>
+								<tbody id="results">
+									<!-- Здесь будут результаты -->
+									
+								</tbody>
+							</table>
+						</div>
+						<div class="results-controls">
+							<div class="control-left">
+								<img src="mem_cat.gif" alt="Мем_2" class="clear_meme">
+							</div>
+							<div class="control-right">
+								<button id="clear-history" class="clear-button">Очистить историю</button>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			
+			<footer id="footer">
+				<div class="footer-info">© 2025 Веб-программирование. Все права защищены. ^_^</div>
+			</footer>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

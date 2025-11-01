@@ -1,0 +1,357 @@
+:root {
+    /* Основные фоны */
+    --bg-dark: #1a1d21;              /* Основной фон страницы */
+    --bg-card: #2a2e35;              /* Фон блоков/карточек */
+    
+    /* Границы */
+    --border-block: #3a3f47;         /* Границы блоков (светлее фона блоков) */
+    --border-element: #4a5568;       /* Границы мелких элементов (серо-голубой) */
+    --border-focus: #5d7b9a;         /* Граница при фокусе (ярче) */
+    
+    /* Фоны элементов */
+    --bg-button: #343c47;            /* Фон кнопок (серо-синий) */
+    --bg-button-hover: #3d4754;      /* Фон кнопок при наведении */
+    --bg-input: #323a45;             /* Фон полей ввода */
+    
+    /* Цвета состояний */
+    --color-success: #4a7b5d;        /* Серо-зеленый для правильных точек */
+    --color-success-light: #5a8b6d;  /* Светлее для hover */
+    --color-error: #a55c5c;			 /*Красный для неправильных точек*/
+	--color-error-light: #b56c6c;	 /* Светлее для hover */
+    
+    /* Текст */
+    --text-heading: #8492a6;         /* Заголовки (яркий серо-голубой) */
+    --text-primary: #e6edf3;         /* Основной текст (светло-серый) */
+    --text-secondary: #8b949e;       /* Второстепенный текст (темно-серый) */
+    --text-muted: #6e7681;           /* Неактивный текст */
+    
+    /* Акцентные цвета */
+    --accent-blue: #7b9ebd;        /* Для выделения важных элементов */
+    --accent-blue-hover: #79b8ff;    /* Акцент при наведении */
+	
+	/*Радиус для границ*/
+	--border-radius: 8px;
+}
+
+/* Сброс настроек */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	background-color: var(--bg-dark);
+	color: var(--text-primary);
+	font-family: 'Courier New', monospace;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+#page-container {
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+	min-height: 100vh;
+}
+
+#header {
+	padding: 32px 0;
+	margin-bottom: 32px;
+	border-bottom: 3px solid var(--border-element);
+	font-family: 'Courier New', monospace;
+	color: var(--text-primary);
+	text-align: center;
+}
+
+.meme-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow: hidden; /* Очистка float'ов */
+}
+
+#meme-column1 {
+    width: 20%;
+    float: left;
+    text-align: right;
+}
+
+#header-content {
+    width: 60%;
+    float: left;
+    text-align: center;
+}
+
+#meme-column2 {
+    width: 20%;
+    float: left;
+    text-align: left;
+}
+
+.meme {
+    width: 150px;
+    height: 150px;
+}
+
+#header-content > h1 {
+	margin-bottom: 16px;
+	color: var(--text-heading);
+	font-weight: 600;
+	font-size: 44px;
+}
+
+.student-info {
+	font-size: 18px;
+}
+
+#main-content {
+	width: 100%;
+	margin-bottom: 32px;
+	overflow: hidden;
+}
+
+.content-block {
+	padding: 24px;
+	margin-bottom: 32px;
+	background-color: var(--bg-card);
+	border-radius: var(--border-radius);
+	border: 1px solid var(--border-block);
+}
+
+#input-section {
+    width: 37%;
+    float: left;
+    margin-right: 2%;
+}
+
+#result-section {
+    width: 61%;
+    float: left;
+}
+
+#input-section > h2 {
+	text-align: center;
+}
+
+h2 {
+	margin-bottom: 24px;
+    padding-bottom: 8px;
+    color: var(--text-heading);
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.form-row {
+    margin-bottom: 5%;
+    width: 100%;
+}
+
+.input-label {
+	margin-bottom: 2%;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.input-description {
+	margin-bottom: 2%;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 2%;
+    background-color: var(--bg-input);
+	border-radius: var(--border-radius);
+    border: 2px solid var(--border-element);
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+input[type="text"]:hover {
+    border-color: var(--border-focus);
+}
+
+.checkbox-group {
+    width: 100%;
+}
+
+.checkbox-row {
+    display: inline-block;
+    width: 32.7%;
+	margin-right: -4px;
+    margin-bottom: 2%;
+    padding: 0 0.5%;
+	font-weight: 600;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.2);
+    margin-right: 8px;
+	background-color: var(--text-primary);
+	accent-color: var(--accent-blue);
+}
+
+.button-group {
+    width: 100%;
+    text-align: center;
+}
+
+.radius-btn {
+    display: inline-block;
+    padding: 2% 4%;
+	margin: 0 1% 2% 0;
+    background-color: var(--bg-button);
+	color: var(--text-primary);
+    border: 2px solid var(--border-element);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    text-align: center;
+}
+
+.radius-btn:active {
+    background-color: var(--accent-blue);
+	border-color: var(--border-focus);
+}
+
+.radius-btn.active {
+    background-color: var(--accent-blue);
+    border-color: var(--border-focus);
+    color: var(--text-primary);
+}
+
+.radius-btn:hover {
+    border-color: var(--border-focus);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 3% 6%;
+    border-radius: var(--border-radius);
+	border: 2px solid var(--border-element);
+	background-color: var(--bg-button);
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.submit-button:hover {
+	border-color: var(--border-focus);
+}
+
+.submit-button:active {
+	background-color: var(--accent-blue);
+	border-color: var(--border-focus);
+	box-shadow: 0 5px 15px var(--bg-button-hover);
+}
+
+#result-section h2 {
+	text-align: center;
+}
+
+#graph-section {
+	margin-bottom: 32px;
+    text-align: center;
+}
+
+#coordinate-plane {
+	margin: 16px auto;
+	background-color: var(--bg-dark);
+    border: 2px solid var(--border-element);
+    border-radius: var(--border-radius);
+}
+
+#table-container {
+    overflow-x: auto;
+    border: 2px solid var(--border-element);
+    border-radius: var(--border-radius);
+}
+
+.results-controls {
+    max-width: 1200px;
+    padding: 0 20px;
+	margin: 20px auto 0 auto;
+    overflow: hidden; /* Очистка float'ов */
+}
+
+.control-left {
+    width: 73%;
+    float: left;
+	margin-right: 3%;
+    text-align: right;
+}
+
+.control-right {
+    width: 24%;
+    float: left;
+    text-align: right;
+}
+
+.clear_meme {
+    width: 70px;
+    height: 70px;
+}
+
+.clear-button {
+    padding: 12px 24px;
+    background-color: var(--bg-button);
+    color: var(--text-primary);
+    border: 2px solid var(--border-element);
+    border-radius: var(--border-radius);
+	font-weight: 600;
+}
+
+.clear-button:hover {
+	border-color: var(--border-focus);
+}
+
+.clear-button:active {
+	border-color: var(--border-focus);
+	background-color: var(--accent-blue);
+	box-shadow: 0 5px 15px var(--bg-button-hover);
+}
+
+#result-table {
+    width: 100%;
+    border-collapse: collapse;
+    display: table;
+}
+
+#result-table th {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid var(--border-element);
+	font-size: 20px;
+    font-weight: 600;
+    display: table-cell;
+}
+
+#result-table td {
+    padding: 16px;
+    text-align: center;
+	background-color: var(--bg-dark);
+    border: 1px solid var(--border-element);
+    color: var(--text-primary);
+}
+
+#result-table td.result-hit {
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+#result-table td.result-miss {
+    color: var(--color-error);
+    font-weight: bold;
+}
+
+#footer {
+	width: 100%;
+	padding: 24px;
+    background-color: var(--bg-button);
+	border-top: 3px solid var(--border-element);
+    color: var(--text-secondary);
+    text-align: center;
+}
